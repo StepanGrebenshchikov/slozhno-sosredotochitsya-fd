@@ -11,12 +11,11 @@
   grid-template-rows: 1fr min-content 1fr;
   block-size: 668px;
   inline-size: 375px;
-  justify-items: end;
   align-items: center;
 }
 
-.main {
-  background-color: #000028;
+.h3__container-padding {
+  padding-top: 40px;
 }
 
 .cover_text {
@@ -37,7 +36,6 @@
   font-style: bold;
   color: #000028;
   background-color: #FF0070;
-
 }
 
 .text {
@@ -46,11 +44,24 @@
   line-height: 23.4px;
 }
 
+.section__main-title-container {
+  padding-bottom: 20px;
+}
+
 .section__main-title {
   font-weight: 700;
   font-style: bold;
   color: #FF0070;
+}
+
+.container__h4-padding {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.section__title-padding-container {
   padding-top: 50px;
+  padding-bottom: 10px;
 }
 
 .section__title {
@@ -58,6 +69,11 @@
   font-style: bold;
   color: #000028;
   background-color: #ff0070;
+}
+
+.section__title-regularbold-container {
+  padding-bottom: 10px;
+  padding-top: 20px;
 }
 
 .section__title-regularbold {
@@ -108,4 +124,85 @@
   font-weight: 700;
   font-style: bold;
   text-shadow: 2px 2px #ff0070;
+}
+
+@media (width >= 768px) {
+  .header {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    block-size: 1024px;
+    inline-size: 768px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .header__theme-menu {
+    justify-self: end;
+  }
+
+  .cover_title {
+    font-family: 'IBM Plex Mono', sans-serif;
+    font-weight: 700;
+    font-style: bold;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    line-height: 83%;
+    color: #db00ff;
+    text-shadow: 4px 4px #ff0070;
+    letter-spacing: 0%;
+  }
+
+  .cover_description-container {
+    width: 364px;
+    height: 117px;
+    justify-self: end;
+  }
+
+  .cover_description {
+    font-weight: 700;
+    font-style: bold;
+    color: #000028;
+    background-color: #FF0070;
+  }
+
+  .first__section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .h3__container-padding {
+    padding: 0;
+    align-self: start;
+  }
+
+  .section__main-title {
+    align-self: start;
+  }
+  
+  .container__h4-padding:first-of-type {
+    padding-top: 0;
+  }
+
+  .second__section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .third__section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .image__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 192px 230px 318px;
+    min-height: 770px;
+  }
+
+  .main__image {
+    height: 100%;
+  }
 }
