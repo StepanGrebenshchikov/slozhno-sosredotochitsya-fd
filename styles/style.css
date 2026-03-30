@@ -100,7 +100,9 @@
 }
 
 .main__image {
-  width: 355px;
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .link_shadow {
@@ -203,11 +205,28 @@
   .image__container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 192px 230px 318px;
-    min-height: 770px;
   }
 
   .main__image {
-    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    object-fit: cover;
+  }
+
+  .sunset__image {
+    grid-column: span 2;
+  }
+
+  .ice-cream__image {
+    grid-row: span 2;
+  }
+
+  .tape__image {
+    grid-row: span 2;
+  }
+
+  .street__image {
+    grid-column: span 2;
   }
 }
