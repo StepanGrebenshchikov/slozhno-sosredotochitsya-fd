@@ -8,4 +8,14 @@
   --background-image: url('../images/cover-image-dark.png');
   --background-position: center;
   --background-attachment: fixed;
+
+  section, footer {
+    background-color: #000028;
+  }
 }
+
+@media (prefers-color-scheme: dark) {
+    .page {
+      color: red;
+    }
+  }
