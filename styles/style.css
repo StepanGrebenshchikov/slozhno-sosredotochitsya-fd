@@ -48,7 +48,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid #FF0070;
+  border: 1px solid #FF0070;
 }
 
 .text {
