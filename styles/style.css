@@ -1,17 +1,64 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
+  background-color: var(--page__color);
   background-image: var(--background-image);
   background-position: var(--background-position);
   background-attachment: var(--background-attachment);
 }
 
 .header {
+  position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
   block-size: 668px;
   align-items: center;
   justify-items: center;
+}
+
+.decore__corners::after,
+.decore__corners::before {
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 25px;
+}
+
+.decore__corners::before {
+  border-top: 1px solid var(--corners__color);
+  border-right: 1px solid var(--corners__color);
+  top: 10px;
+  right: 10px;
+}
+
+.decore__corners::after {
+  border-bottom: 1px solid var(--corners__color);
+  border-left: 1px solid var(--corners__color);
+  bottom: 10px;
+  left: 10px;
+}
+
+.header__decore {
+  display: var(--header__decore-status);
+  position: absolute;
+  color: var(--header__decore-color);
+  text-transform: uppercase;
+  font-size: 18px;
+  top: 14px;
+  right: 41px;
+}
+
+.header__decore::after {
+  position: absolute;
+  content: "";
+  background-color: var(--header__decore-color);
+  border-radius: 50px;
+  box-shadow: 0px 0px 4px 2px var(--header__decore-color);
+  width: 9px;
+  height: 9px;
+  display: inline-block;
+  top: 5px;
+  margin-left: 14px;
 }
 
 .cover_title {
@@ -20,8 +67,8 @@
   font-style: bold;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
-  color: #db00ff;
-  text-shadow: 4px 4px #ff0070;
+  color: var(--header__text-color);
+  text-shadow: 4px 4px var(--header__shadow-color);
 }
 
 .cover_description-container {
@@ -32,8 +79,8 @@
 .cover_description {
   font-weight: 700;
   font-style: bold;
-  color: #000028;
-  background-color: #FF0070;
+  color: var(--page__description-text-color);
+  background-color: var(--page__description-background-color);
 }
 
 .header__theme-menu {
@@ -41,14 +88,25 @@
   padding-right: 10px;
 }
 
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .header__theme-menu-button {
   background-color: transparent;
   border: none;
-  color: #FF0070;
+  color: var(--theme_switch-text-color);
 }
 
-.header__theme-menu-button:focus-visible {
-  border: 1px solid #FF0070;
+.header__theme-menu-button:hover {
+  border: 1px solid var(--theme_switch-hover-border-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  border-bottom: 1px solid var(--theme-switch-border-color);
 }
 
 .text {
@@ -64,7 +122,7 @@
 .section__main-title {
   font-weight: 700;
   font-style: bold;
-  color: #FF0070;
+  color: var(--page__heading-color-text);
 }
 
 .container__h4-padding {
@@ -75,8 +133,8 @@
 .section__title {
   font-weight: 700;
   font-style: bold;
-  color: #000028;
-  background-color: #ff0070;
+  color: var(--page__description-text-color);
+  background-color: var(--page__description-background-color);
 }
 
 .section__title-regularbold-container {
@@ -86,13 +144,13 @@
 
 .section__title-regularbold {
   font-weight: 400;
-  background-color: #ff0070;
-  color: #000028;
+  background-color: var(--page__description-background-color);
+  color: var(--page__description-text-color);
 }
 
 .section__description {
   font-weight: 400;
-  color: #f1b2ce;
+  color: var(--page__subtitle-text);
 }
 
 .image__container {
@@ -107,7 +165,7 @@
 }
 
 .link_shadow {
-  text-shadow: 2px 2px 0px #FF0070;
+  text-shadow: 2px 2px 0px var(--link__shadow-color);
   text-decoration: none;
 }
 
@@ -115,47 +173,50 @@
   text-decoration: underline;
 }
 
-.link_shadow:focus {
-  outline: 1px 1px white;
-}
-
-.footer_style {
-  background-color: #000028;
-  block-size: 667px;
-  inline-size: 375px;
+footer {
+  padding-top: 40px;
 }
 
 .footer__title_container {
+  position:relative;
+  min-height: 668px;
   display: grid;
   justify-content: center;
   align-items: center;
-  block-size: 667px;
+  min-height: 668px;
 }
 
 .footer__title_style {
-  color: #DB00FF;
+  color: var(--header__text-color);
   font-size: 116px;
   font-weight: 700;
   font-style: bold;
-  text-shadow: 2px 2px #ff0070;
+  text-shadow: 2px 2px var(--header__shadow-color);
 }
 
 section {
   padding-left: 10px;
   padding-right: 10px;
+  padding-top: 50px;
 }
 
 .section__title-padding-container {
   padding-bottom: 10px;
 }
 
-section {
-    padding-top: 50px;
-  }
+section:first-of-type {
+  padding-top: 40px;
+}
 
-  section:first-of-type {
-    padding-top: 40px;
-  }
+.link_shadow:focus {
+  outline: 1px solid var(--link__shadow-focus-color);
+}
+
+section, footer {
+    background-color: var(--page__color);
+}
+
+
 
 @media (width >= 768px) {
   .header {
@@ -164,6 +225,12 @@ section {
     block-size: 1024px;
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .header__theme-menu {
@@ -176,8 +243,6 @@ section {
     font-style: bold;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     line-height: 83%;
-    color: #db00ff;
-    text-shadow: 4px 4px #ff0070;
     letter-spacing: 0%;
   }
 
@@ -190,8 +255,6 @@ section {
   .cover_description {
     font-weight: 700;
     font-style: bold;
-    color: #000028;
-    background-color: #FF0070;
   }
 
   .first__section {
@@ -240,20 +303,14 @@ section {
     object-fit: cover;
   }
 
-  .sunset__image {
-    grid-column: span 2;
-  }
-
-  .ice-cream__image {
-    grid-row: span 2;
-  }
-
-  .tape__image {
-    grid-row: span 2;
-  }
-
+  .sunset__image,
   .street__image {
     grid-column: span 2;
+  }
+
+  .ice-cream__image,
+  .tape__image {
+    grid-row: span 2;
   }
 
   section {
@@ -267,6 +324,10 @@ section {
   .section__title-padding-container {
     padding-bottom: 20px;
   }
+  
+  footer {
+    padding-top: 60px;
+  }
 }
 
 @media (width >= 1024px) {
@@ -279,6 +340,8 @@ section {
 
   .header__theme-menu-list {
     display: flex;
+    flex-direction: row;
+    gap: 10px;
   }
 
   .header__theme-menu {
@@ -286,5 +349,24 @@ section {
     align-self:flex-start;
     padding-right: 0;
     padding-top: 20px;
+  }
+
+  .header__decore {
+    top: 25px;
+    right: 52px;
+  }
+
+  .header__decore::after {
+
+  }
+
+  .decore__corners::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .decore__corners::after {
+    bottom: 20px;
+    left: 20px;
   }
 }

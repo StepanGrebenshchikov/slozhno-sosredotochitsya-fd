@@ -8,4 +8,19 @@
   --background-image: url('../images/cover-image-dark.png');
   --background-position: center;
   --background-attachment: fixed;
+  --theme_switch-text-color: #FF0070;
+  --theme-switch-border-color: #FF0070;
+  --theme_switch-hover-border-color: #FF007066;
+  --header__text-color: #DB00FF;
+  --header__shadow-color: #FF0070;
+  --corners__color: #FF0070;
+  --header__decore-color: #FF0070;
+  --header__decore-status: inline-block;
+  --page__color: #000028;
+  --page__description-background-color: #FF0070;
+  --page__description-text-color: #000028;
+  --page__heading-color-text: #FF0070;
+  --page__subtitle-text: #F1B2CE;
+  --link__shadow-color: #FF0070;
+  --link__shadow-focus-color: #F1B2CE;
 }
