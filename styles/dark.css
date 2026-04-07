@@ -8,14 +8,12 @@
   --background-image: url('../images/cover-image-dark.png');
   --background-position: center;
   --background-attachment: fixed;
-
-  section, footer {
-    background-color: #000028;
-  }
+  --button__color: #353430;
+  --button__hover-color: #32312D66;
+  --main__color: #FF0070;
+  --title__color: #db00ff;
+  --main__description-color: #000028;
+  --header__theme-menu-button-hover: #FF007066;
+  --section__description-color: #f1b2ce;
+  --link__shadow: #F1B2CE;
 }
-
-@media (prefers-color-scheme: dark) {
-    .page {
-      color: red;
-    }
-  }
