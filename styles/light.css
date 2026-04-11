@@ -41,7 +41,6 @@
   text-shadow: 4px 4px var(--header__shadow-color);
 }
 
-
 .theme-light .cover_description {
   background-color: var(--page__description-background-color);
 }
@@ -71,6 +70,7 @@
 .theme-light .header__decore {
   display: var(--header__decore-color);
 }
+
 
 @media (prefers-color-scheme: light) {
   :root {

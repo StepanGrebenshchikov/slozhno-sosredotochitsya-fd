@@ -15,7 +15,6 @@
   grid-template-rows: 1fr min-content 1fr;
   min-height: 668px;
   align-items: center;
-  justify-items: center;
 }
 
 .decore__corners::after,
@@ -68,6 +67,7 @@
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
+  letter-spacing: 0%;
   color: var(--header__text-color);
   text-shadow: 4px 4px var(--header__shadow-color);
   padding-left: 10px;
@@ -131,9 +131,22 @@
   color: var(--page__heading-color-text);
 }
 
-.container__h4-padding {
-  padding-top: 20px;
-  padding-bottom: 10px;
+.container__h4-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.concentration-section__description-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section__description-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .section__title {
@@ -153,12 +166,6 @@
   color: var(--page__description-text-color);
 }
 
-.section__description-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
 .section__description {
   font-weight: 400;
   color: var(--page__subtitle-text);
@@ -173,6 +180,9 @@
 
 .main__image {
   width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  object-fit: cover;
 }
 
 .link_shadow {
@@ -190,7 +200,6 @@ footer {
 
 .footer__title_container {
   position:relative;
-  min-height: 668px;
   display: grid;
   justify-content: center;
   align-items: center;
@@ -199,7 +208,7 @@ footer {
 
 .footer__title_style {
   color: var(--header__text-color);
-  font-size: 116px;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-weight: 700;
   text-shadow: 2px 2px var(--header__shadow-color);
 }
@@ -228,7 +237,7 @@ section:first-of-type {
   .header {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
-    min-height;: 1024px;
+    min-height: 1024px;
   }
 
   .header__theme-menu {
@@ -266,13 +275,9 @@ section:first-of-type {
   }
 
   .cover_title {
-    font-family: 'IBM Plex Mono', sans-serif;
     justify-self: start;
     padding: 0px;
-    font-weight: 700;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    line-height: 83%;
-    letter-spacing: 0%;
   }
 
   .cover_description-container {
@@ -284,53 +289,38 @@ section:first-of-type {
     padding-right: 20px;
   }
 
+  .section__main-title-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 20px;
+  }
+
   .why__section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
     padding-left: 20px;
     padding-right: 20px;
   }
 
-  .why__section-description-container {
-    justify-content: end;
-    min-width: 472px;
-  }
-
-  .h3__container-padding {
-    padding: 0;
-    align-self: start;
+  .grid__section-description-container {
+    grid-column: 2/4;
   }
 
   .section__main-title {
     align-self: start;
   }
-  
-  .container__h4-padding:first-of-type {
-    padding-top: 0;
-  }
 
-  .how__section{
+  .how__section {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
-  }
-
-  .section__description-container-width {
-    min-width: 472px;
   }
 
   .image__container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
-  }
-
-  .main__image {
-    width: 100%;
-    min-height: 100%;
-    max-height: 100%;
-    object-fit: cover;
   }
 
   .sunset__image,
@@ -363,8 +353,8 @@ section:first-of-type {
 }
 
 @media (width >= 1024px) {
-  header {
-    height: 768px;
+  .header {
+    min-height: 768px;
   }
 
   .cover_description-container {
@@ -373,11 +363,13 @@ section:first-of-type {
     min-width: 521px;
   }
 
-  .why__section-description-container {
-    min-width: 649px;
+  .section__main-title-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-bottom: 20px;
   }
 
-  .section__description-container {
+  .concentration-section__description-container {
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: auto-fill;
@@ -413,7 +405,7 @@ section:first-of-type {
     left: 20px;
   }
 
-  .section__description-container-width {
-    min-width: 649px;
+  footer {
+    height: 768px;
   }
 }
