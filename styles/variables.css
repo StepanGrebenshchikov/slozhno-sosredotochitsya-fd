@@ -1,11 +1,5 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
 :root {
   --background-image: url('../images/cover-image-dark.png');
-  --background-position: center;
-  --background-attachment: fixed;
   --theme_switch-text-color: #FF0070;
   --theme-switch-border-color: #FF0070;
   --theme_switch-hover-border-color: #FF007066;
