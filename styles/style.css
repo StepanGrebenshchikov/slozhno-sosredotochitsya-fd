@@ -236,7 +236,7 @@ section:first-of-type {
 }
 
 .footer_styles {
-  padding-top: 40px;
+  margin-top: 40px;
 }
 
 @media (width >= 768px) {
@@ -354,7 +354,7 @@ section:first-of-type {
   }
   
   .footer_styles {
-    padding-top: 60px;
+    margin-top: 60px;
   }
 
   .footer__title_container {
